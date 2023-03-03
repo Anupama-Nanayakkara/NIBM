@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      .form {
+        background-color: #f2f2f2;
+        border-radius: 8px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+        margin: 48px auto;
+        max-width: 480px;
+        padding: 24px;
+      }
+      .form label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      .form input[type="text"],
+      .form input[type="password"] {
+        border-radius: 4px;
+        border: 1px solid #CCCCCC;
+        box-sizing: border-box;
+        display: block;
+        font-size: 16px;
+        margin-bottom: 16px;
+        padding: 8px;
+        width: 100%;
+      }
+      .form button {
+        background-color: #00AC61;
+        border: none;
+        border-radius: 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        margin-top: 24px;
+        padding: 12px;
+        width: 100%;
+      }
+      .form button:hover {
+        background-color: #245ED8;
+      }
+      .form .error {
+        color: #FF0000;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .form .success {
+        color: #008000;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span class="error" id="password-error"></span>
+      
+      <label for="security-question-1">Security Question 1:</label>
+      <select id="security-question-1" name="security-question-1" required>
+        <option value="">-- Select a Security Question --</option>
+        <option value="What is your mother's birth year?">What is your mother's birth year?</option>
+        <option value="What is your favorite food?">What is your favorite food?</option>
+        <option value="What is your favorite movie?">What is your favorite movie?</option>
+        <option value="What is the name of your first pet?">What is the name of your first pet?</option>
+        <option value="What is your favorite color?">What is your favorite color?</option>
+      </select>
+      <input type="text" id="security-answer-1" name="security-answer-1" required>
+      
+      <label for="security-question-2">Security Question 2:</label>
+      <select id="security-question-2" name="security-question-2" required>
+        <option value="">-- Select a Security Question --</option>
+        <option value="What is your mother's birth year?">
+    What is your mother's birth year?</option>
+    <option value="What is your favorite food?">What is your favorite food?</option>
+    <option value="What is your favorite movie?">What is your favorite movie?</option>
+    <option value="What is the name of your first pet?">What is the name of your first pet?</option>
+    <option value="What is your favorite color?">What is your favorite color?</option>
+  </select>
+  <input type="text" id="security-answer-2" name="security-answer-2" required>
+
+<button onclick="window.location.href = 'home.html'" class="signin">Sign In</button>
+</form>
+<script>
+  const form = document.querySelector('.form');
+  const passwordInput = document.getElementById('password');
+  const passwordError = document.getElementById('password-error');
+
+  // Validate password
+  function validatePassword() {
+    const password = passwordInput.value;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      passwordError.textContent = 'Password must contain at least 8 characters with at least one uppercase letter, one symbol, and one number.';
+      return false;
+    } else {
+      passwordError.textContent = '';
+      return true;
+    }
+  }
+
+  // On form submission
+  form.addEventListener('submit', (e) => {
+    // Prevent default form submission behavior
+    e.preventDefault();
+
+    // Validate password
+    const isPasswordValid = validatePassword();
+
+    // If all fields are valid, submit the form
+    if (isPasswordValid && form.checkValidity()) {
+      alert('Sign in successful!');
+      form.submit();
+    }
+  });
+</script>
+</body>
+</html>

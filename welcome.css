@@ -1,0 +1,126 @@
+/* CSS styles for the page */
+body {
+  background-color: #b5e6b5; /* light green */
+}
+
+h1 {
+  color: #ffffff; /* white */
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+  text-shadow: 2px 2px #0c660c; /* dark green */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.featured-content {
+  background-color: #eaf4ea; /* light green */
+  padding: 50px;
+}
+
+.featured-content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.featured-content .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-content .promo,
+.featured-content .info {
+  background-color: #ffffff; /* white */
+  padding: 30px;
+  box-shadow: 0 2px 2px #cccccc; /* gray */
+}
+
+.featured-content .promo h3,
+.featured-content .info h3 {
+  margin-top: 0;
+}
+
+.featured-content .promo p,
+.featured-content .info p {
+  margin-bottom: 20px;
+}
+
+.featured-content .btn {
+  display: inline-block;
+  background-color: #0c660c; /* dark green */
+  color: #ffffff; /* white */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.featured-content .btn:hover {
+  background-color: #0b4e0b; /* darker green */
+}
+header {
+  background-color: #ffffff; /* white */
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 2px 2px #cccccc; /* gray */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333333; /* dark gray */
+  font-size: 20px;
+}
+.marquee {
+  width: 100%;
+  height: 50px;
+  background-color: green;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee h1 {
+  font-size: 36px;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  transform: translateX(100%);
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

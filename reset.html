@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reset Password</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="reset-password-page">
+	  <div class="form">
+	    <form class="verification-form">
+	      <h2>Reset Password</h2>
+	      <p>Please answer the following questions to verify your identity:</p>
+	      <label>What is your favorite color?</label>	
+	      <input type="text" name="favorite-color" placeholder="Favorite color" required>
+	      <label>What is your favorite fruit?</label>
+	      <input type="text" name="favorite-fruit" placeholder="Favorite fruit" required>
+	      <button type="button" onclick="checkVerification()">Submit</button>
+	    </form>
+	    <form class="reset-password-form" style="display: none;">
+	      <h2>Reset Password</h2>
+	      <input type="password" name="Password" placeholder="Password" required>
+	      <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+	      <button onclick="window.location.href = 'home.html'" class="reset">Reset Password</button>
+	    </form>
+	  </div>
+	</div>
+	<script>
+		function checkVerification() {
+			// Perform verification checks here
+			// If verification is successful, show the reset password form
+			document.querySelector(".verification-form").style.display = "none";
+			document.querySelector(".reset-password-form").style.display = "block";
+		}
+	</script>
+</body>
+</html>

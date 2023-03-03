@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="login-page">
+	  <div class="form">
+	    <form class="login-form">
+	      <input type="text" placeholder="Username" required>
+	      <input type="password" placeholder="Password"required>
+	       <button onclick="window.location.href = 'home.html'" class="login-form">Log In</button>
+	      <p class="message">Not registered? <a href="signIn.html">Create an account</a></p>
+	      
+	      <p class="forgot-password"><a href="reset.html" id="forgotPassword">Forgot Password?</a></p>
+	    </form>
+	  </div>
+	</div>
+	<div class="reset-password-page" id="resetPassword">
+	  <div class="form">
+	    <form class="reset-password-form">
+	      <h2>Reset Password</h2>
+	      <input type="email" placeholder="Email address"/>
+	      <button>Reset Password</button>
+	    </form>
+	  </div>
+	</div>
+	<script>
+		document.getElementById("forgotPassword").addEventListener("click", function(){
+			document.getElementById("resetPassword").style.display = "block";
+			document.getElementById("loginPage").style.display = "none";
+		});
+	</script>
+</body>
+</html>

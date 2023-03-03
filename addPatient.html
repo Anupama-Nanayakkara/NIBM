@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Patient</title>
+	<style>
+		body {
+			background-color: #2ecc71;
+			font-family: Arial, sans-serif;
+		}
+		
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			max-width: 500px;
+			margin: 0 auto;
+		}
+		
+		h1 {
+			text-align: center;
+			color: #fff;
+			margin-top: 50px;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #555;
+		}
+		
+		input[type="text"], select {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 20px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+		}
+		
+		.button-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 20px;
+		}
+		
+		button {
+			padding: 10px 20px;
+			border-radius: 5px;
+			border: none;
+			background-color: #3498db;
+			color: #fff;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		
+		button:hover {
+			background-color: #2980b9;
+		}
+		
+		.age-field {
+			display: none;
+		}
+		
+		.age-label {
+			display: block;
+			margin-bottom: 10px;
+			color: #555;
+		}
+		
+		.age-value {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Add Patient</h1>
+	<form>
+		<label for="patient-id">Patient ID:</label>
+		<input type="text" id="patient-id" name="patient-id" required>
+		
+		<label for="first-name">First Name:</label>
+		<input type="text" id="first-name" name="first-name" required>
+		
+		<label for="last-name">Last Name:</label>
+		<input type="text" id="last-name" name="last-name" required>
+		
+		<label for="address">Address:</label>
+		<input type="text" id="address" name="address" required>
+		
+		<label for="birthday">Birthday:</label>
+		<input type="date" id="birthday" name="birthday" onchange="calculateAge()" required>
+		
+		<label for="sex">Sex:</label>
+		<select id="sex" name="sex" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select>
+		
+		<div class="age-field">
+			<label class="age-label">Age:</label>
+			<span class="age-value" id="age-value"></span>
+		</div>
+		
+		<div class="button-row">
+			<button type="reset">Reset</button>
+			<button type="submit" onclick="addPatient(event)">Add Patient</button>
+			<script type="text/javascript">
+			alert(`The patient ${patient-id} was added successfully.`);
+			</script>
+		</div>
+	</form>
+</body>
+</html>
